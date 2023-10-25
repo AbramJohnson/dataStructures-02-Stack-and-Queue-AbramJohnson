@@ -19,7 +19,7 @@ class queue {
         bool insert(const T&);
         bool remove();
 
-        void next();
+        void next(); // using void to avoid runtime errors
     
         bool isEmpty();
         bool isFull();

@@ -19,7 +19,7 @@ class stack {
         bool push(const T&);
         bool pop();
 
-        void top();
+        void top(); // put as void to avoid runtime errors
 
         bool isEmpty();
         bool isFull();

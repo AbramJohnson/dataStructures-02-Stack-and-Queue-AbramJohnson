@@ -10,7 +10,7 @@ using std::cout;
 using std::endl;
 
 template <typename T>
-queue<T>::queue()
+queue<T>::queue() // upon creating queue object, will create its own linkedlist object.
 {
     LinearSinglyLinkedList queue;
 }
@@ -34,7 +34,7 @@ bool queue<T>::remove()
 }
 
 template <typename T>
-void queue<T>::next()
+void queue<T>::next() // function first checks if queue is empty before printing the following.
 {
     if(isEmpty())
     {

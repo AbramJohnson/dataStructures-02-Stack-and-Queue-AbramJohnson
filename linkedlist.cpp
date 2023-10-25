@@ -10,7 +10,7 @@
 using namespace std;
 
 template <typename T>
-LinearSinglyLinkedList<T>::LinearSinglyLinkedList() 
+LinearSinglyLinkedList<T>::LinearSinglyLinkedList() // initiates new head and size/count variables
 {
     head = NULL;
 
@@ -33,29 +33,29 @@ void LinearSinglyLinkedList<T>::setMaxSize(int new_size)
 template <typename T>
 bool LinearSinglyLinkedList<T>::isEmptyList()
 {
-    return count == ZERO;
+    return count == ZERO; // returns if count = 0; is true or false
 }
 
 template <typename T>
 bool LinearSinglyLinkedList<T>::isFullList()
 {
-    return count == size;
+    return count == size; // returns if count = size; is true or false
 }
 
 template <typename T>
 bool LinearSinglyLinkedList<T>::insertElmAtFront(const T& front_data)
 {
-    bool f_added = false;
+    bool f_added = false; // will return false if the if statement isn't passed
     bool f_full = isFullList();
 
-    if(!f_full) 
+    if(!f_full) // checks to see if list is full
     {
         SNode<T>* node = new SNode<T>;
 
         node->data = front_data;
         node->next = head;
 
-        head = node;
+        head = node; // sets head to new node
 
         count++;
         f_added = true;
@@ -71,9 +71,9 @@ bool LinearSinglyLinkedList<T>::insertElmAtEnd(const T& end_data)
     bool e_full = isFullList();
 
     if(!e_full) {
-        SNode<T>* current = head;
+        SNode<T>* current = head; // duplicates head node for the sake of traversal
 
-        while(current->next != NULL)
+        while(current->next != NULL) // will move through list until it reaches the end
         {
             current = current->next;
         }
@@ -97,11 +97,11 @@ bool LinearSinglyLinkedList<T>::removeFromFront()
     bool removed = false;
     bool empty = isEmptyList();
 
-    if(!empty)
+    if(!empty) // checks to see if list is empty first
     {
         SNode<T>* current = head;
-        head = current->next;
-        delete current;
+        head = current->next; // changes head to the node its pointing to
+        delete current; // deallocates previous head node
 
         count--;
         removed = true;
@@ -114,9 +114,9 @@ template <typename T>
 bool LinearSinglyLinkedList<T>::copyList(const LinearSinglyLinkedList& copyOtherList)
 {
     deleteList();
-    setMaxSize(copyOtherList.size);
+    setMaxSize(copyOtherList.size); // redefines linkedlist before copying different list
 
-    SNode<T>* other_current = copyOtherList.head;
+    SNode<T>* other_current = copyOtherList.head; // duplicates other linkedlist head node
     
     return copyListRecursive(other_current);
 }
@@ -125,7 +125,7 @@ template <typename T>
 bool LinearSinglyLinkedList<T>::deleteList()
 {
     SNode<T>* current = head;
-    while(current) {
+    while(current) { // deletes all nodes starting from the head until empty
         SNode<T>* remove_node = new SNode<T>;
         remove_node = current;
 
@@ -143,13 +143,13 @@ template <typename T>
 T LinearSinglyLinkedList<T>::nextElm()
 {
     SNode<T>* current = head;
-    return current->next->data;
+    return current->next->data; // returns the data of the heads next node
 }
 
 template <typename T>
-bool LinearSinglyLinkedList<T>::copyListRecursive(SNode<T>* fcurrent) {
+bool LinearSinglyLinkedList<T>::copyListRecursive(SNode<T>* fcurrent) { // adds all nodes in a linkedlist starting from the tail
     if(fcurrent->next != NULL) {
-        copyListRecursive(fcurrent->next);
+        copyListRecursive(fcurrent->next); // calls itself if next node exists, terminates when NULL is found
     }
     return insertElmAtFront(fcurrent->data);
 }

@@ -10,7 +10,7 @@ using std::cout;
 using std::endl;
 
 template <typename T>
-stack<T>::stack()
+stack<T>::stack() // upon creating a stack object it'll create its own linkedlist object
 {
     LinearSinglyLinkedList stack;
 }
@@ -34,7 +34,7 @@ bool stack<T>::pop()
 }
 
 template <typename T>
-void stack<T>::top()
+void stack<T>::top() // first checks to see if stack is empty before printing the following
 {
     if(isEmpty())
     {

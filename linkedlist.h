@@ -28,17 +28,17 @@ class LinearSinglyLinkedList {
 
         bool removeFromFront();
 
-        bool copyList(const LinearSinglyLinkedList&);
+        bool copyList(const LinearSinglyLinkedList&); // assuming that it means to copy a different list
         bool deleteList();
 
-        T nextElm();
+        T nextElm(); // assuming that it means to check the heads next element
     private:
         SNode<T> *head;
 
-        int count;
+        int count; // to keep track of the amount of nodes in list
         int size;
 
-        bool copyListRecursive(SNode<T>*);
+        bool copyListRecursive(SNode<T>*); // helps with the copyList function
 };
 
 #endif
