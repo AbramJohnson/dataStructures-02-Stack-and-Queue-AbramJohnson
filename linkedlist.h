@@ -7,7 +7,10 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
+#define ZERO 0
+
 #include "data.h"
+#include <iostream>
 
 template <typename T>
 class LinearSinglyLinkedList {
@@ -15,13 +18,14 @@ class LinearSinglyLinkedList {
         LinearSinglyLinkedList();
         ~LinearSinglyLinkedList();
 
-        void setMaxSize();
+        void setMaxSize(int);
 
         bool isEmptyList();
         bool isFullList();
 
-        bool insertElmAtEnd();
-        bool insertElmAtFront(); // addElmAtFront
+        bool insertElmAtFront(const T&); // addElmAtFront
+        bool insertElmAtEnd(const T&);
+
         bool removeFromFront();
 
         bool copyList();
@@ -30,6 +34,9 @@ class LinearSinglyLinkedList {
         int nextElm();
     private:
         SNode<T> *head;
+
+        int count;
+        int size;
 };
 
 #endif

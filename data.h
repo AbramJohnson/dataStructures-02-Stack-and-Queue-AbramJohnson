@@ -13,7 +13,7 @@ class SNode {
     T data;
     SNode<T> *next;
 
-    friend class linkedlist<T>;
+    friend class LinearSinglyLinkedList<T>;
 };
 
 #endif
