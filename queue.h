@@ -7,16 +7,19 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
+#include "linkedlist.h"
+#include <iostream>
+
 template <typename T>
 class queue {
     public:
         queue();
         ~queue();
 
-        bool insert();
+        bool insert(const T&);
         bool remove();
 
-        T next();
+        void next();
     
         bool isEmpty();
         bool isFull();

@@ -7,16 +7,19 @@
 #ifndef STACK_H
 #define STACK_H
 
-template <typename T>
-class Stack {
-    public:
-        Stack();
-        ~Stack();
+#include "linkedlist.h"
+#include <iostream>
 
-        bool push(T*);
+template <typename T>
+class stack {
+    public:
+        stack();
+        ~stack();
+
+        bool push(const T&);
         bool pop();
 
-        bool top();
+        void top();
 
         bool isEmpty();
         bool isFull();
