@@ -9,4 +9,27 @@
 
 #include "data.h"
 
+template <typename T>
+class LinearSinglyLinkedList {
+    public:
+        LinearSinglyLinkedList();
+        ~LinearSinglyLinkedList();
+
+        void setMaxSize();
+
+        bool isEmptyList();
+        bool isFullList();
+
+        bool insertElmAtEnd();
+        bool insertElmAtFront(); // addElmAtFront
+        bool removeFromFront();
+
+        bool copyList();
+        bool deleteList();
+
+        int nextElm();
+    private:
+        SNode<T> *head;
+};
+
 #endif
