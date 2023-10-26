@@ -12,25 +12,25 @@ using std::endl;
 template <typename T>
 queue<T>::queue() // upon creating queue object, will create its own linkedlist object.
 {
-    LinearSinglyLinkedList queue;
+    LinearSinglyLinkedList newQueue;
 }
 
 template <typename T>
 queue<T>::~queue()
 {
-    delete queue;
+    newQueue.deleteList();
 }
 
 template <typename T>
 bool queue<T>::insert(const T& new_data)
 {
-    return queue.insertElmAtEnd(new_data)
+    return newQueue.insertElmAtEnd(new_data)
 }
 
 template <typename T>
 bool queue<T>::remove()
 {
-    return queue.removeFromFront();
+    return newQueue.removeFromFront();
 }
 
 template <typename T>
@@ -40,18 +40,18 @@ void queue<T>::next() // function first checks if queue is empty before printing
     {
         cout << "empty." << endl;
     } else {
-        cout << queue.head->data;
+        cout << newQueue.head->data;
     }
 }
 
 template <typename T>
 bool queue<T>::isEmpty()
 {
-    return stack.isEmptyList();
+    return newQueue.isEmptyList();
 }
 
 template <typename T>
 bool queue<T>::isFull()
 {
-    return stack.isFullList();
+    return newQueue.isFullList();
 }

@@ -12,25 +12,25 @@ using std::endl;
 template <typename T>
 stack<T>::stack() // upon creating a stack object it'll create its own linkedlist object
 {
-    LinearSinglyLinkedList stack;
+    LinearSinglyLinkedList newStack;
 }
 
 template <typename T>
 stack<T>::~stack()
 {
-    delete stack;
+    newStack.deleteList();
 }
 
 template <typename T>
 bool stack<T>::push(const T& new_data)
 {
-    return stack.insertElmAtFront(new_data);
+    return newStack.insertElmAtFront(new_data);
 }
 
 template <typename T>
 bool stack<T>::pop()
 {
-    return stack.removeFromFront();
+    return newStack.removeFromFront();
 }
 
 template <typename T>
@@ -40,18 +40,18 @@ void stack<T>::top() // first checks to see if stack is empty before printing th
     {
         cout << "empty." << endl;
     } else {
-        cout << stack.head->data;
+        cout << newStack.head->data;
     }
 }
 
 template <typename T>
 bool stack<T>::isEmpty()
 {
-    return stack.isEmptyList();
+    return newStack.isEmptyList();
 }
 
 template <typename T>
 bool stack<T>::isFull()
 {
-    return stack.isFullList();
+    return newStack.isFullList();
 }

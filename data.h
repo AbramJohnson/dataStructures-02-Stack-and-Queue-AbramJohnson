@@ -8,6 +8,9 @@
 #define DATA_H
 
 template <typename T>
+class LinearSinglyLinkedList;
+
+template <typename T>
 class SNode { // Basic one-way node that holds T data.
     private:
     T data;
