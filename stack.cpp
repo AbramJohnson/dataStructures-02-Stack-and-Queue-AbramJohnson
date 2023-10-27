@@ -13,6 +13,13 @@ template <typename T>
 stack<T>::stack() // upon creating a stack object it'll create its own linkedlist object
 {
     LinearSinglyLinkedList newStack;
+    newStack = new LinearSinglyLinkedList();
+}
+
+template <typename T>
+stack<T>::stack(int size)
+{
+    newStack.setMaxSize(size);
 }
 
 template <typename T>
@@ -40,7 +47,7 @@ void stack<T>::top() // first checks to see if stack is empty before printing th
     {
         cout << "empty." << endl;
     } else {
-        cout << newStack.head->data;
+        cout << newStack.nextElm();
     }
 }
 

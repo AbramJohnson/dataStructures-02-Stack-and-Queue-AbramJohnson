@@ -14,6 +14,7 @@ template <typename T>
 class stack {
     public:
         stack();
+        stack(int);
         ~stack();
 
         bool push(const T&);

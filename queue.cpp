@@ -13,6 +13,13 @@ template <typename T>
 queue<T>::queue() // upon creating queue object, will create its own linkedlist object.
 {
     LinearSinglyLinkedList newQueue;
+    newQueue = new LinearSinglyLinkedList();
+}
+
+template <typename T>
+queue<T>::queue(int size)
+{
+    newQueue.setMaxSize(size);
 }
 
 template <typename T>
@@ -40,7 +47,7 @@ void queue<T>::next() // function first checks if queue is empty before printing
     {
         cout << "empty." << endl;
     } else {
-        cout << newQueue.head->data;
+        cout << newQueue.nextElm();
     }
 }
 

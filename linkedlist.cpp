@@ -142,8 +142,7 @@ bool LinearSinglyLinkedList<T>::deleteList()
 template <typename T>
 T LinearSinglyLinkedList<T>::nextElm()
 {
-    SNode<T>* current = head;
-    return current->next->data; // returns the data of the heads next node
+    return head->data; // returns the data of the head node
 }
 
 template <typename T>

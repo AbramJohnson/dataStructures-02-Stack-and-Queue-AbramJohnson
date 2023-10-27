@@ -14,6 +14,7 @@ template <typename T>
 class queue {
     public:
         queue();
+        queue(int);
         ~queue();
 
         bool insert(const T&);
