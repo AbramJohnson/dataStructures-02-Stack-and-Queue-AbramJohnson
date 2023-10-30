@@ -7,9 +7,13 @@
 #define MAIN_H
 
 #include <iostream>
-
+#include <time.h>
+#include <string>
 #include "queue.h"
 #include "stack.h"
+
+#define TEST_INT 5
+#define PARTIAL_INT 3
 
 using std::cout;
 using std::endl;
